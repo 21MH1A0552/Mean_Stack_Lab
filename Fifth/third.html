@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form {
+            max-width: 300px;
+            margin: 10px auto;
+            border: 3px solid black;
+            padding: 50px;
+        }
+        form input{
+            margin: 10px;
+        }
+        form  button{
+            padding: 5px;
+            margin-left: 100px;
+            margin-top: 20px;
+            padding-left: 10px;
+        }
+        .login-message {
+            margin-top: 10px;
+            color: red;
+        }
+        form div{
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="loginForm">
+        <h1 style="text-align: center; margin-top: -20px;">Login Page</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit">Login</button>
+        <div id="loginMessage" class="login-message"></div>
+    </form>
+
+   
+
+    <script>
+        class User {
+            constructor(username, password) {
+                this.username = username;
+                this.password = password;
+            }
+
+            validate(username, password) {
+                if (username === this.username && password === this.password) {
+                    return "Login Successful";
+                } else {
+                    return "Invalid username or password";
+                }
+            }
+        }
+
+        const user = new User("admin", "password123");
+
+        const loginForm = document.getElementById("loginForm");
+        const loginMessage = document.getElementById("loginMessage");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            const usernameInput = document.getElementById("username").value;
+            const passwordInput = document.getElementById("password").value;
+
+            const result = user.validate(usernameInput, passwordInput);
+            loginMessage.textContent = result;
+        });
+    </script>
+</body>
+</html>

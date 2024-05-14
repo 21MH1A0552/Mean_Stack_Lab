@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional statement..</title>
+</head>
+<body style="text-align: center;">
+      <h1>Movie Ticket Booking..</h1>
+    <script>
+       
+        let x=prompt("Enter How Many Number of Tickets U Want..")
+        
+        x=Number(x);
+        if(x<=2){
+            document.write("Number of tickets: "+x);
+            document.write("<br>Price of Each Tickets: "+150);
+            document.write("<br>Price of tickets without discount: "+(x*150));
+        }else if(x>2 && x<=5){
+            document.write("Number of tickets: "+x);
+            document.write("<br>Price of Each Tickets : "+130);
+            document.write("<br>Price of tickets : "+(x*130));
+        }else{
+            document.write("Booking is not allowed..")
+        }
+    </script>
+</body>
+</html>

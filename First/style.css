@@ -1,0 +1,70 @@
+/* Base styles */
+nav {
+    display: flex;
+    align-items: flex-start;
+    background-color: black;
+    max-height: 80px;
+    padding: 0 1rem; 
+}
+
+nav ul {
+    display: flex;
+    align-items: flex-end;
+    gap: 3.5rem; 
+    margin-left: auto;
+    margin-right: 1.5rem;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 1.5rem; 
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+.logo {
+    height: 60px;
+    width: fit-content;
+    margin-left: 1.5rem; 
+    margin-top: 0.4rem;
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        gap: 1rem; 
+        margin-right: 1rem; 
+    }
+
+    nav ul li {
+        font-size: 1.25rem;
+    }
+
+    .logo {
+        height: 40px; 
+        margin-left: 1rem; 
+        margin-top: 0.2rem; 
+    }
+}
+.section{
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    margin-top: 2rem;
+  
+}
+.section ul li{
+    margin-top: 0.7rem;
+    list-style: none;
+}
+.section ul li a{
+  
+
+}

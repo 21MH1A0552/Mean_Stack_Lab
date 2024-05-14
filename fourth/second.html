@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1>Inheritence Concept in Java Script..</h1>
+
+    <script>
+         class Person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            display(){
+                document.write("<br>Name of Employee is:"+this.name);
+                document.write("<br>Age of employe is:"+this.age);
+            }
+         }
+
+
+         class Employee extends Person{
+            constructor(name,age,role){
+                super(name,age)
+                this.role=role;
+            }
+            display2(){
+                document.write("<br>Role is:"+this.role);
+            }
+
+         }
+         let employe1=new Employee("Aman Yadav",22,"software Engineer.");
+         employe1.display();
+         employe1.display2();
+
+    </script>
+ </body>
+ </html>

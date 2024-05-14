@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    #movieList{
+        width: 50%;
+        margin: 10% auto;
+        border: 3px solid black;
+        padding: 60px;
+         
+    }
+    </style>
+</head>
+<body>
+    <div id="movieList">
+           <h1 style="text-align: center; text-decoration: underline;">Movie List..</h1>
+    </div>
+
+    <script>
+        const movies=[
+            {
+                name:"Gadar",
+                starring:"Sunny Deol",
+                language:"Hindi",
+                ratings:9
+            },
+            {
+                name:"Jaan",
+                starring:"Ajay Devgan",
+                language:"Hindi",
+                ratings:10
+            },
+            {
+                name:"Dilwale..",
+                starring:"Ajay DevGan..",
+                language:"Hindi",
+                ratings:9.5
+            }
+        ]
+
+        function Display(){
+            const movieList=document.getElementById("movieList")
+            movies.forEach(movie => {
+                const movieElement = document.createElement("div");
+                movieElement.innerHTML = `
+                    <h2>${movie.name}</h2>
+                    <p><strong>Starring:</strong> ${movie.starring}</p>
+                    <p><strong>Language:</strong> ${movie.language}</p>
+                    <p><strong>Ratings:</strong> ${movie.ratings}</p>
+                    <hr>
+                `;
+                movieList.appendChild(movieElement);
+            });
+        }
+        Display()
+    </script>
+    
+</body>
+</html>

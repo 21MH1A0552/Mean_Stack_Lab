@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content</title>
+    <style>
+        .container {
+            text-align: center;
+            border: 3px solid black;
+            width: 60%;
+            margin:20% auto;
+        }
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .message {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .cone {
+            width: 100px;
+            height: 150px;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <div id="content">
+            <h1 class="heading">Cone background-color is : White</h1>
+            <h2 class="message">Button Is Not Clicked..</h2>
+            <div class="cone"></div>
+        </div>
+       <h1 id="ram"> <a href="#" onclick="changeContent()">Click to Change Content And background-color</a></h1>
+    </div>
+
+    <script>
+        let clicked = false;
+
+        function changeContent() {
+            const contentDiv = document.getElementById("content");
+            const heading = contentDiv.querySelector(".heading");
+            const message = contentDiv.querySelector(".message");
+            const cone = contentDiv.querySelector(".cone");
+            
+
+            if (!clicked) {
+                heading.textContent = "Cone background-color is : Yellow";
+                message.textContent = "Button is clicked..";
+                cone.style.backgroundColor = "yellow";
+                cone.style.border = "none";
+                clicked = true;
+            } else {
+                heading.textContent = "Cone background-color is : White";
+                message.textContent = "Button is Unclicked..";
+                cone.style.backgroundColor = "orange";
+                cone.style.border = "2px solid black";
+                clicked = false;
+            }
+        }
+    </script>
+</body>
+</html>

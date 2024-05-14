@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            margin-left: 30px;
+            font-weight: bolder;
+        }
+
+        button:hover {
+            background-color: black;
+            color: aliceblue;
+            cursor: pointer;
+        }
+
+        .main {
+            margin: 10% auto;
+            border: 2px solid black;
+            width: 70%;
+            text-align: center;
+        }
+
+        .details {
+            margin: 10% auto;
+            border: 2px solid black;
+            width: 50%;
+            text-align: center;
+            display: none;
+        }
+       ol li{
+           text-align: left; 
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">In-built Events and Handlers</h1>
+    <div class="main" onmouseover="Background()">
+        <h1>LIST OF MOVIE..</h1>
+        <ol type="1">
+           
+            <li>Gadar</li>
+            <li>Jaan</li>
+            <li>Ek hi raasta</li>
+            <li>Diljale</li>
+            <li>Dilwale</li>
+         
+        </ol>
+        <h1><u>Movie Booking online..</u></h1>
+        <div class="details">
+            <h1>Number Of Person: <span id="movie">10</span></h1>
+            <h1>Price of Each Ticket is: <span id="price">200</span></h1>
+           
+        </div>
+        <h2 id="tt" style="display: none;">Total Price Is: <span id="tp">500</span></h2>
+        <button onclick="BookTicket()">Book Ticket</button>
+        <button onclick="TotalPrice()">Total Price</button>
+    </div>
+
+    <script>
+        let numberOfTickets = 10; 
+        let pricePerTicket = 200; 
+        function BookTicket() {
+            let x = prompt("Enter No of Ticket.");
+            x = Number(x);
+            numberOfTickets = x; 
+            let m = document.getElementById("movie");
+            m.innerHTML = numberOfTickets;
+            let p = document.getElementById("price");
+            p.innerHTML = pricePerTicket;
+            let dp = document.querySelector(".details");
+             dp.style.display="block"
+        }
+
+        function TotalPrice() {
+            let totalPrice = numberOfTickets * pricePerTicket;
+            let tp = document.getElementById("tp");
+            let tt = document.getElementById("tt");
+            tp.innerHTML = totalPrice;
+            tt.style.display="block"
+        }
+        function Background() {
+    let dp = document.querySelector(".main");
+    dp.style.backgroundColor = "pink";
+}
+    </script>
+</body>
+</html>

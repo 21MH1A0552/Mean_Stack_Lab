@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Simulation</title>
+    <style>
+        body {
+            padding: 30px;
+            margin: 10% auto;
+            font-family: Arial, sans-serif;
+        }
+        .price-change {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .positive-change {
+            color: green;
+        }
+        .negative-change {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Price Simulation</h1>
+    <div id="priceChanges"></div>
+
+    <script>
+        function generateRandomPriceChange() {
+            return Math.floor(Math.random() * 11) - 5;
+        }
+
+        function simulateStockPriceChanges() {
+            let stockPrice = 100;
+            let iteration = 1;
+            const priceChangesElement = document.getElementById("priceChanges");
+
+            const intervalId = setInterval(() => {
+                const priceChange = generateRandomPriceChange();
+                stockPrice += priceChange;
+
+                const priceChangeText = `Iteration ${iteration}: Stock price changed by ${priceChange} units. Current price: ${stockPrice}`;
+                const priceChangeElement = document.createElement("div");
+                priceChangeElement.textContent = priceChangeText;
+                priceChangeElement.classList.add("price-change");
+                if (priceChange > 0) {
+                    priceChangeElement.classList.add("positive-change");
+                } else if (priceChange < 0) {
+                    priceChangeElement.classList.add("negative-change");
+                }
+                priceChangesElement.appendChild(priceChangeElement);
+
+                if (iteration >= 10) {
+                    clearInterval(intervalId);
+                    const simulationStoppedMessage = document.createElement("div");
+                    simulationStoppedMessage.textContent = "Simulation stopped after 10 iterations.";
+                    priceChangesElement.appendChild(simulationStoppedMessage);
+                }
+
+                iteration++;
+            }, 3000);
+        }
+
+        simulateStockPriceChanges();
+    </script>
+</body>
+</html>
